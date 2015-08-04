@@ -3,4 +3,16 @@ checks:
 
 filter:
     excluded_paths:
+        - vendor/*
         - tests/*
+    paths:
+        - src/*
+
+tools:
+    php_analyzer: true
+    php_changetracking: true
+    php_sim: true
+    sensiolabs_security_checker: true
+    external_code_coverage:
+        timeout: 300
+        runs: 3
