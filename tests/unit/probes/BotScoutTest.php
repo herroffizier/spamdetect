@@ -8,19 +8,19 @@
 namespace spamdetect\tests\probes;
 
 use spamdetect\tests\helpers\ProbeTestCase;
-use spamdetect\probes\BlogSpam;
+use spamdetect\probes\BotScout;
 
-class BlogSpamTest extends ProbeTestCase
+class BotScoutTest extends ProbeTestCase
 {
     public function messageSettersAndResultGetters()
     {
         return [
             [
-                ['setIP' => '192.168.1.1', 'setName' => 'John', 'setBody' => 'This is very good post and not a spam.', 'setOrigin' => 'http://my.site.com'],
+                ['setIP' => '8.8.4.4',],
                 ['isSpam' => false],
             ],
             [
-                ['setIP' => '192.168.1.1', 'setName' => 'John', 'setBody' => 'SPAM', 'setOrigin' => 'http://my.site.com'],
+                ['setIP' => '46.151.52.61',],
                 ['isSpam' => true],
             ],
         ];
@@ -28,7 +28,8 @@ class BlogSpamTest extends ProbeTestCase
 
     protected function getProbe()
     {
-        $probe = new BlogSpam;
+        $key = '';
+        $probe = new BotScout($key);
 
         return $probe;
     }
