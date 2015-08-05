@@ -1,9 +1,20 @@
 <?php
+/**
+ * Spam Detect
+ *
+ * @author  Martin Stolz <herr.offizier@gmail.com>
+ */
 
 namespace spamdetect;
 
-class Detector
+/**
+ * Base detector class.
+ */
+class Detector implements ProbeInterface
 {
+    /**
+     * @var ProbeInterace
+     */
     protected $probe;
 
     public function __construct(ProbeInterface $probe)

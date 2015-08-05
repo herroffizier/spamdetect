@@ -3,8 +3,7 @@ Spam Detect
 
 [![Build Status](https://travis-ci.org/herroffizier/spamdetect.svg?branch=master)](https://travis-ci.org/herroffizier/spamdetect) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/herroffizier/spamdetect/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/herroffizier/spamdetect/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/herroffizier/spamdetect/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/herroffizier/spamdetect/?branch=master) [![Code Climate](https://codeclimate.com/github/herroffizier/spamdetect/badges/gpa.svg)](https://codeclimate.com/github/herroffizier/spamdetect)
 
-
-**Spam Detect** is a small wrapper for various spam detecting services written in PHP.
+**Spam Detect** is a common interface for different antispam and antibot services written in PHP. Main purpose of the project is to help block spam in comments, reviews or blogposts.
 
 Usage
 -----

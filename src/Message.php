@@ -1,10 +1,20 @@
 <?php
+/**
+ * Spam Detect
+ *
+ * @author  Martin Stolz <herr.offizier@gmail.com>
+ */
 
 namespace spamdetect;
 
+/**
+ * Simple MessageInterface implementation based on AbstractMessage.
+ */
 class Message extends AbstractMessage
 {
     /**
+     * Initialize some message fields with values from $_SERVER array.
+     *
      * @return Message
      */
     public function initWithCurrentRequest()
@@ -18,7 +28,8 @@ class Message extends AbstractMessage
         }
 
         if (!empty($_SERVER['HTTP_HOST'])) {
-            $this->setOrigin($_SERVER['HTTP_HOST']);
+            $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+            $this->setOrigin($protocol.$_SERVER['HTTP_HOST']);
         }
 
         return $this;

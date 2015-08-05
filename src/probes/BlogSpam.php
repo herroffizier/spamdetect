@@ -1,4 +1,9 @@
 <?php
+/**
+ * Spam Detect
+ *
+ * @author  Martin Stolz <herr.offizier@gmail.com>
+ */
 
 namespace spamdetect\probes;
 
@@ -8,6 +13,9 @@ use spamdetect\Result;
 use Httpful\Request;
 use \UnexpectedValueException;
 
+/**
+ * Probe for blogspam.net service.
+ */
 class BlogSpam implements ProbeInterface
 {
     const URL = 'http://test.blogspam.net:9999/';
@@ -15,14 +23,28 @@ class BlogSpam implements ProbeInterface
     const OK = 'OK';
     const SPAM = 'SPAM';
 
+    /**
+     * Base service url.
+     *
+     * @var string
+     */
     public $url;
 
+    /**
+     * Constructor.
+     *
+     * Base service url may be overriden.
+     *
+     * @param string|null $url
+     */
     public function __construct($url = null)
     {
         $this->url = $url ?: self::URL;
     }
 
     /**
+     * Create object for HTTP POST request to service.
+     *
      * @return Request
      */
     protected function buildPostRequest()
@@ -31,6 +53,8 @@ class BlogSpam implements ProbeInterface
     }
 
     /**
+     * Convert message fields to request fields.
+     *
      * @param  MessageInterface $message
      * @return string[]
      */
