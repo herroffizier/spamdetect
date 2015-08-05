@@ -13,7 +13,7 @@ namespace spamdetect;
 class Result implements ResultInterface
 {
     /**
-     * @var isSpam
+     * @var boolean
      */
     protected $isSpam;
 
@@ -22,6 +22,10 @@ class Result implements ResultInterface
      */
     protected $reason;
 
+    /**
+     * @param boolean $isSpam
+     * @param string  $reason
+     */
     public function __construct($isSpam, $reason)
     {
         $this->isSpam = (bool) $isSpam;

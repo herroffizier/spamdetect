@@ -13,7 +13,7 @@ namespace spamdetect;
 class Detector implements ProbeInterface
 {
     /**
-     * @var ProbeInterace
+     * @var ProbeInterface
      */
     protected $probe;
 
