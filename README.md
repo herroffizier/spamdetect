@@ -11,7 +11,6 @@ Usage
 Usage is quite simple.
 
 ```php
-
 // Initialize probe (each service should have it's own probe).
 $probe = new spamdetect\probes\BlogSpam;
 

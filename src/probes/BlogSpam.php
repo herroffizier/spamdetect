@@ -28,7 +28,7 @@ class BlogSpam implements ProbeInterface
      *
      * @var string
      */
-    public $url;
+    protected $url;
 
     /**
      * Constructor.
